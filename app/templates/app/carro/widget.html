@@ -1,0 +1,83 @@
+
+
+<div class="class card">
+    <div class="class card-body">
+        <h2>Carrito de compras</h2>
+        <hr>
+        <table class="table table-striped table-hover table-responsive-sm">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>
+
+        
+            
+        
+            
+            {% if request.session.carro.items %}
+                {% for key,value in request.session.carro.items %}
+                <tr class="text-center">
+        
+                    <td>{{value.nombre}}</td>
+                    <td>{{value.cantidad}}</td>
+                    <td>{{value.precio}}</td>
+                    <td>
+                        <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-success" >-</a>
+                        <a href="{% url 'carro:eliminar' value.producto_id %}" class="btn btn-sm btn-success" >Eliminar</a>
+
+                    </td>
+                </tr>
+
+        
+        
+                 {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">
+                    <div class="alert alert-danger text-center">
+                        Sin productos rey
+                    </div>
+
+                </td>
+            </tr>
+
+            {% endif %}
+            
+        
+            
+            <tr>
+                <td colspan="3">
+        
+                    Total: $ {{importe_total_carro}}
+
+                    <td>
+                        <a href="{% url 'carro:limpiar'%}" class="btn btn-sm btn-success">Limpiar</a>
+                    </td>
+                    <tr>
+                        {% if importe_total_carro > 0 %}
+                        <td colspan="4">
+                            <button class="btn btn-dark">Comprar</button>
+                        </td>
+                        {% endif %}
+                    </tr>
+                </td>
+            </tr>
+            
+        
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

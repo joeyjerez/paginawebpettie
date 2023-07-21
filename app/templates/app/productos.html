@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<!-- hero 4 productos -->
+<section id="hero4">
+    <h1 class="display-3">Productos</h1>
+    <p class="display-6 text-center"> Te garantizamos los mejores estándares de calidad en tus compras Pettie.</p>
+    <!--Button especialistas-->
+
+</section>
+
+<!-- fin hero 4 productos -->
+
+{% load humanize %}
+
+<!-- Contenedor de productos -->
+
+<section class="contenedor">
+    
+    <div class="contenedor-items">
+
+
+
+        
+        {% for p in productos %}
+            {% if p.stock > 0 %}
+                <div class="item">
+                    
+                    <span class="titulo-item"> {{ p.nombre | capfirst }} </span>
+                    {% if p.imagen %}
+                    <img src="{{ p.imagen.url }}" alt="" class="img-item">
+                    {% endif %}
+                    <span class="precio-item"> ${{ p.precio | intcomma }} </span>
+                    <a href="{% url 'carro:agregar' p.sku %}" class="btn btn-success">Añadir al Carrito</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+    <br>
+    <br>
+    <div style="float: right;">
+        <!-- INCLUDE: AGREGA EL CODIGO DEL CARRITO (HTML)-->
+        {% include "app/carro/widget.html" %}
+    </div>
+
+</section>
+
+<!-- fin  contenedor de productos -->
+
+
+
+{% endblock %}

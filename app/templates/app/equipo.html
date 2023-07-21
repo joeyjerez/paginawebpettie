@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="{% static 'app/js/jquery.js' %}"></script>
+{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<section id="heroEquipo">
+    <h1 class="display-3">Nuestro equipo</h1>
+    <p class="display-6 text-center"> Contamos con los mejores especialistas.</p>
+</section>
+
+<div class="containerCartaSobre" id="containerCartaSobre">
+
+    <div id="cartulina1" class="card border-info mb-3" style="width: 18rem;">
+        <img src="{% static 'app/css/Imagen/vet1_sobre_nosotros.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-title">Cristiano Ronaldo</p>
+            <p class="card-text">- Medico Veterinario <br> - Egresado el año 2013 <br>
+                - Anestesiologo</p>
+        </div>
+    </div>
+
+    <div id="cartulina2" class="card border-info mb-3" style="width: 18rem;">
+        <img src="{% static 'app/css/Imagen/vet2_sobre_nosotros.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-title">Carlitos Vera</p>
+            <p class="card-text">- Medico Veterinario <br> - Egresado el año 2004 <br>
+                - Peluquero
+            </p>
+        </div>
+    </div>
+
+    <div id="cartulina3" class="card border-info mb-3" style="width: 18rem;">
+        <img src="{% static 'app/css/Imagen/vet1_sobre_nosotros.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-title">Messi Naldo</p>
+            <p class="card-text">- Medico Veterinario <br> - Egresado el año 2018 <br>
+                - Cardiologo</p>
+        </div>
+    </div>
+
+    <div class="container" id="containerPatitas">
+        <button onclick="cambiarFondo()" class="btn btn-primary mt-5" id="coloresBlack">
+            Cambiar Color
+        </button>
+    </div>
+
+
+</div>
+
+{% endblock %}

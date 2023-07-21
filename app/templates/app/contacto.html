@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+
+
+
+<!-- hero 5 Nosotros -->
+<section id="hero5">
+    <h1 class="display-3">Contacto</h1>
+    <p class="display-6 text-center"> Pettie está para ayudarte con todas tus dudas 24/7!.</p>
+    <!--Button especialistas-->
+
+</section>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>Contactate con Pettiedog!</h2>
+                <hr>
+                <form action="" class="" method="post">
+
+                {% csrf_token %}
+        
+        
+                {{ form | crispy }}
+                <hr>
+                <br>
+        
+                <div class="d-flex justify-content-end">
+                <input type="reset" value="Cancelar" class="btn btn-secondary">
+                &nbsp;
+                <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button>
+                </div>
+            
+                
+        
+                </form>
+                {{mensaje}}
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<table id="tablacontactos">
+        
+</table>
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

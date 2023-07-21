@@ -1,0 +1,229 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+
+<script src="{% static 'app/js/jquery.js' %}"></script>
+
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<!-- Hero portada principal con carousel -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <section id="hero">
+                <h1 class="display-3 text-center">La seguridad de tu mascota es lo más importante.</h1>
+                <p class="card-text-center">Contamos con los mejores cuidados</p>
+                <!--Button especialistas-->
+                <div class="botonEspecialistas">
+                    <!-- Button trigger modal -->
+                    <a href="equipo.html">
+                        <button type="button" class="btn btn-primary">
+                            Ver Especialistas
+                        </button>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section id="hero2">
+                <h1 class="display-3 text-center">La seguridad de tu mascota es lo más importante.</h1>
+                <p class="card-text-center">Contamos con los mejores cuidados</p>
+                <!--Button especialistas-->
+                <div class="botonProductos">
+                    <!-- Button trigger modal -->
+                    <a href="productos.html">
+                        <button type="button" class="btn btn-primary">
+                            Ver Productos
+                        </button>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section id="hero3">
+                <h1 class="display-3 text-center">La seguridad de tu mascota es lo más importante.</h1>
+                <p class="card-text-center">Contamos con los mejores cuidados</p>
+                <!--Button especialistas-->
+                <div class="botonEspecialistas">
+                    <!-- Button trigger modal -->
+                    <a href="equipo.html">
+                        <button type="button" class="btn btn-primary">
+                            Ver especialistas
+                        </button>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Fin Hero portada principal con carousel -->
+
+<div class="row text-center my-3 animate__animated animate__bounceInLeft">
+    <!-- carta 1 -->
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">SACO PETTIE XL</h5>
+                <img src="{% static 'app/img/alimento1.jpg' %}" class="img-fluid" alt="">
+                <p class="card-text-center">$12.000</p>
+                <a href="{% url 'productos' %}" class="btn btn-info">Ver Producto</a>
+            </div>
+        </div>
+    </div>
+    <!-- fin carta1 -->
+
+    <!-- carta 2 -->
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">SACO SUPER PETTIE </h5>
+                <img src="{% static 'app/img/alimento2.jpg' %}" class="img-fluid" alt="">
+                <p class="card-text-center">$33.000</p>
+                <a href="{% url 'productos' %}" class="btn btn-info">Ver Producto</a>
+            </div>
+        </div>
+    </div>
+    <!-- fin carta 2 -->
+
+    <!-- carta 3 -->
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">PETTIE SACO L</h5>
+                <img src="{% static 'app/img/alimento3.jpg' %}" class="img-fluid" alt="">
+                <p class="card-text-center">$15.000</p>
+                <a href="{% url 'productos' %}" class="btn btn-info">Ver Producto</a>
+            </div>
+        </div>
+    </div>
+    <!-- fin carta 3 -->
+
+    <!-- carta 4 -->
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">ARNES ESPECIAL</h5>
+                <img src="{% static 'app/img/arnes3.jpg' %}" class="img-fluid" alt="">
+                <p class="card-text-center">$35.000</p>
+                <a href="{% url 'productos' %}" class="btn btn-info">Ver Producto</a>
+            </div>
+        </div>
+    </div>
+    <!-- fin carta4 -->
+
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <img src="{% static 'app/img/background_Sobrenosotros.jpg' %}" class="img-fluid" alt="Image" />
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h1 class="display-3 text-center">Prefiere productos de calidad!</h1>
+        <p class="display-6 text-center">
+            Contamos con los accesorios y alimentos mejor calificados en el mercado con grandes estándares
+            de calidad.
+        </p>
+    </div>
+</div>
+
+<div class="row align-items-center">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
+        <form>
+            <div class="mb-2">
+                <h1 class="display-3 text-center">¡Escríbenos!</h1>
+                <p class="display-6 text-center">
+                    En nuestro apartado de contacto estaremos dispuestos a darte la respuesta que necesitas.
+                    Todas tus dudas y sugerencias las puedes hacer mediante nuestro formulario de contacto.
+                </p>
+                
+                <div id="emailHelp" class="form-text">PettieDog no comparte tu información con terceros.</div>
+            </div>
+            
+            <div>
+                <a href="{% url 'contacto' %}" class="btn btn-info">Ir a contactar a PettieDog</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
+        <img src="{% static 'app/img/carrousel2_veterinarios.jpeg' %}" class="img-fluid" alt="Image" />
+    </div>
+
+</div>
+
+<!-- clientes semanales -->
+<div class="container" id="containerPatitas" >
+    <button class="btn btn-primary mt-5" id="patitas">
+        Clientes Semanales🐾
+    </button>
+</div>
+
+
+<div class="containerSemanales" id="clientesSemanales">
+    <div class="card border-info mt-5" style="width: 18rem;" >
+        <img src="{% static 'app/css/Imagen/cliente1Semanal.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">Roko</p>
+          <p class="card-text">-Pastor Alemán</p>                  
+        </div>              
+    </div>
+
+    <div id="clase4" class="card border-info mt-5"  style="width: 15rem;">
+        <img src="{% static 'app/css/Imagen/cliente4Semanal.jpg' %}" height="200px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">Apolo</p>
+          <p class="card-text">-Beagle</p>                  
+        </div>              
+    </div>
+    
+    <div class="card border-info mt-5" style="width: 19rem;">
+        <img src="{% static 'app/css/Imagen/cliente3Semanal.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">Alberto</p>
+          <p class="card-text">-BullDog Francés</p>                  
+        </div>              
+    </div>
+
+    <div class="container" id="containerPatitas" >
+        <button class="btn btn-primary mt-5" id="patitasOcultar">
+            Ocultar 🐾
+        </button>
+    </div>
+    
+</div>
+<!-- fin clientes semanales -->
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+{% extends 'app/base.html' %}
+
+
+{% block js %}
+
+<script>
+    function eliminarProducto(sku) {
+        Swal.fire({
+            "title":"Estás a punto de eliminar este producto",
+            "text":"¿Estás seguro?",
+            "icon":"warning",
+            "showCancelButton":true,
+            "cancelButtonText": "Cancelar",
+            "confirmButtonText": "Confirmar",
+            "reverseButtons": true,
+            "confirmButtonColor": "#dc3545"
+        })
+        .then(function(result) {
+            if(result.isConfirmed){
+                window.location.href = "/eliminar-producto/"+sku+"/"
+            }
+        })
+    }
+</script>
+
+{% endblock %}
+
+
+{% block body %}
+{% load humanize %}
+
+<br>
+<br>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h2>Listado de productos PettieDog</h2>
+        <hr>
+        <table class="table table-striped table-hover table-responsive-sm">
+            <tr>
+                <th>SKU</th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Opciones</th>
+            </tr>
+        
+            {% for p in entity %}
+        
+        
+            <tr>
+                <td>{{ p.sku }}</td>
+                <td>{{ p.nombre | title }}</td>
+                <td>{{ p.categoria_id | title }}</td>
+                <td>{{ p.descripcion }}</td>
+                <td>${{ p.precio | intcomma }}</td>
+                <td>{{ p.stock }}</td>
+                <td>
+                    {% if perms.app.change_producto %}
+                    <!-- ESTE ERROR NO AFECTA AL PROYECTO EN NADA, SE PRODUCE POR EL CODIGO QUE ESTÁ EN LENGUAJE JS AL COMIENZO -->
+                    <a href="{% url 'modificar_producto' p.sku %}" class="btn btn-info btn-sm">Editar</a>
+                    {% endif %}
+                    {% if perms.app.delete_producto %}
+                    <a href="#" onclick="eliminarProducto({{ p.sku }})" class="btn btn-danger btn-sm">Eliminar</a> 
+                    {% endif %}
+                </td>
+        
+            </tr>
+        
+            {% endfor %}
+        
+        </table>
+        <hr>
+        <div>
+            {% include 'app/paginator.html' %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

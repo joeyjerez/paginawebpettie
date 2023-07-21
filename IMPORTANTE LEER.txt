@@ -1,0 +1,25 @@
+http://127.0.0.1:8000/api/producto/
+
+superuser:joey
+contraseña:adminadmin
+
+usuarios con permisos a algunas vistas
+user:ponce
+contraseña: adminadmin
+
+user:jose
+contraseña:adminadmin
+
+***¡¡¡IMPORTANTE!!!!***
+
+Antes de levantar el servidor se debe ejecutar en consola el siguiente comando:
+
+pip install -r requirements.txt
+
+Esto es para obtener acceso a todas las funcionalidades de alertas y elementos que usan bootrstrap, asi como también al Pillow!
+
+
+Profe, si la pagina se cae o le da error con el carrito al momento de limpiarlo. este se encuentra en:
+pettiedog > settings.py > TEMPLATES > 'context_procesors' > 'app.carro.context_processor.importe_total_carro'
+
+se debe borrar, recargar y volver a pegar, es un tema por sesión el cual no funciona bien. Pero su funcionamiento esta correcto

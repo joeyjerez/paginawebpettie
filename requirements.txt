@@ -1,0 +1,4 @@
+pillow
+django-admin-interface
+crispy-bootstrap5
+djangorestframework

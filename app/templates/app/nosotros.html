@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<!-- hero 5 Nosotros -->
+<section id="hero5">
+    <h1 class="display-3">Sobre Nosotros</h1>
+    <p class="display-6 text-center"> Te garantizamos los mejores estándares de calidad en tus compras Pettie.</p>
+    <!--Button especialistas-->
+
+</section>
+
+<!-- fin hero 5 Nosotros -->
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <img src="{% static 'app/img/background_Sobrenosotros.jpg' %}" class="img-fluid" alt="Image" id="imgNosotros" />
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h1 class="display-3 text-center">¡Somos PettieDog!</h1>
+            <p class="text-justify">
+                Nuestra empresa dió comienzo con la venta de productos para mascotas como bandanas, correas e
+                identificaciones, todo esto para ayudar a una fundación sin fines de lucro, todo partió a través de
+                las redes sociales.
+                Somos una empresa que ofrece a nuestros clientes lo mejor en calidad de productos para mascotas del
+                mercado, nos aseguramos de que el servicio que les brindamos sea el más accesible y rápido posible!
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <img src="{% static 'app/img/carrousel2_veterinarios.jpeg' %}" class="img-fluid" alt="Image" id="imgNosotros" />
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+            <p class="display-6 text-center">
+                Contamos con los mejores profesionales para asesorarte en el cuidado de tus mascotas y en la compra
+                de productos que esta requiera.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
